@@ -285,10 +285,11 @@
   .blog-panel-meta{color:var(--text-secondary);margin-bottom:1rem}
   
   /* Contact */
-  .contact-container{max-width:600px;width:100%;text-align:center}
-  .contact-info h3{color:var(--text-primary);font-size:1.8rem;margin-bottom:1rem;font-weight:600}
-  .contact-links{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap}
-  .contact-link{display:flex;align-items:center;gap:.8rem;color:var(--text-primary);text-decoration:none;padding:1rem 1.5rem;background:var(--glass-bg);border-radius:12px;border:1px solid var(--glass-border);transition:.3s}
+  .contact-container{ max-width: 600px;width: 100%;text-align: center;}
+  .contact-info h3{ color: var(--text-primary);font-size: 1.8rem;margin-bottom: 1rem;font-weight: 600;}
+  .contact-info p {color: var(--text-secondary);font-size: 1.1rem;line-height: 1.6;margin-bottom: 2.5rem; /* Increased from default to add more space */max-width: 500px;margin-left: auto;margin-right: auto;}
+  .contact-links{display: flex;justify-content: center;gap: 1.5rem;flex-wrap: wrap;margin-top: 1rem;}
+  .contact-link{  display: flex;align-items: center;gap: .8rem;color: var(--text-primary);text-decoration: none;padding: 1rem 1.5rem;background: var(--glass-bg);border-radius: 12px;border: 1px solid var(--glass-border);transition: .3s;min-width: 160px;}
   .contact-link:hover{background:var(--glass-hover);transform:translateY(-2px)}
   
   /* Copyright Text*/ 
@@ -306,4 +307,20 @@
     .section-title{font-size:2rem}
     .projects-container,.experience-grid,.skills-container{grid-template-columns:1fr}
   }
+  @media (max-width: 768px) {
+  .contact-info p,
+  .contact-description {
+    margin-bottom: 2rem; /* Slightly less on mobile */
+    font-size: 1rem;
+  }
+  .contact-links {
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+  
+  .contact-link {
+    min-width: 140px;
+    padding: 0.8rem 1.2rem;
+  }
+}
   
