@@ -320,6 +320,18 @@
   }
 }
 
+@keyframes quantum-sway {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(2deg); }
+  50% { transform: rotate(-1deg); }
+  75% { transform: rotate(1.5deg); }
+}
+
+@keyframes quantum-pulse {
+  0%, 100% { opacity: 0.1; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(1.05); }
+}
+
 /* PERFORMANCE OPTIMIZATION */
 .spaceship, .quantum-computer, .circuit-overlay, .data-particle {
   will-change: transform;
@@ -608,29 +620,71 @@
     padding: 0.8rem 1.2rem;
   }
 }
-
 @media (max-width: 1024px) {
   .spaceship {
     width: 150px;
     height: 90px;
     top: 10%;
     right: 3%;
+    opacity: 0.06;
   }
-    .quantum-computer {
+  
+  .quantum-computer {
     width: 140px;
     height: 200px;
     top: 5%;
     right: 2%;
+    opacity: 0.05;
   }
+}
+/* Circuit lines in background */
+.circuit-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.02;
+  z-index: -2;
+  pointer-events: none;
+  background-image: 
+    linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 80px 80px;
+  animation: circuit-drift 40s linear infinite;
 }
 
 @media (max-width: 768px) {
-  .spaceship, .quantum-computer {
-    opacity: 0.04; /* Even more subtle on mobile */
+  .spaceship {
+    width: 120px;
+    height: 75px;
+    opacity: 0.04;
+    top: 8%;
+    right: 2%;
   }
   
-  .circuit-pattern {
-    opacity: 0.015;
+  .quantum-computer {
+    width: 110px;
+    height: 160px;
+    opacity: 0.04;
+    top: 3%;
+    right: 1%;
+  }
+  
+  .circuit-overlay {
+    opacity: 0.01;
+  }
+  
+  .data-particle {
+    display: none; /* Hide on mobile to reduce visual clutter */
   }
 }
+
+/* PERFORMANCE OPTIMIZATION */
+.spaceship, .quantum-computer, .circuit-overlay, .data-particle {
+  will-change: transform;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
   
