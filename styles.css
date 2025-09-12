@@ -192,18 +192,49 @@
   .skill-badge:hover{background:rgba(255,255,255,.12);transform:translateY(-2px)}
   
   /* Projects */
-  .projects-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:2rem;width:100%}
-  .project-box{position:relative;height:400px;display:flex;justify-content:center;align-items:center}
-  .project-content{
-    position:relative;padding:2rem;background:var(--glass-bg);backdrop-filter:blur(20px);border:1px solid var(--glass-border);border-radius:16px;z-index:1;transition:.4s ease;color:var(--text-primary);overflow:hidden;max-height:320px
-  }
+  .projects-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:5rem;width:100%}
+  .project-box {
+  position: relative;
+  /* Remove: height: 400px; */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Change from center to flex-start */
+}
+
+.project-content {
+  position: relative;
+  padding: 2rem;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  z-index: 1;
+  transition: .4s ease;
+  color: var(--text-primary);
+  overflow: visible; /* Change from hidden */
+  /* Remove: max-height: 320px; */
+  width: 100%;
+}
   .project-content h3{font-size:1.5rem;color:var(--text-primary);margin-bottom:1rem;font-weight:600}
   .project-link{
     display:inline-block;background:rgba(255,255,255,.1);color:var(--text-primary);padding:.8rem 1.5rem;border-radius:8px;text-decoration:none;font-weight:500;margin-top:1rem;margin-right:1rem;transition:all .3s ease;border:1px solid rgba(255,255,255,.2)
   }
   .project-link:hover{background:rgba(255,255,255,.15);transform:translateY(-2px)}
-  .expand-btn{margin-top:1rem;padding:.6rem 1rem;border-radius:8px;border:1px solid var(--glass-border);background:var(--glass-bg);color:var(--text-primary);cursor:pointer}
-  .expand-btn:hover{background:var(--glass-hover)}
+  .expand-btn{
+  margin-top: 1rem;
+  padding: .6rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  color: var(--text-primary);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+  .expand-btn:hover{
+  background: var(--glass-hover);
+  transform: translateY(-1px);
+}
   
   /* Library */
   .library-container{width:100%}
