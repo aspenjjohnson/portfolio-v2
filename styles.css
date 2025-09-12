@@ -101,6 +101,102 @@
   0% { opacity: 0.3; transform: scaleX(1); }
   100% { opacity: 0.6; transform: scaleX(1.2); }
 }
+/* Quantum Computer */ 
+
+.quantum-computer {
+  position: fixed;
+  top: 8%;
+  right: 3%;
+  width: 180px;
+  height: 240px;
+  opacity: 0.06;
+  z-index: -1;
+  animation: quantum-sway 15s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+/* Quantum computer main body */
+.quantum-computer::before {
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  width: 140px;
+  height: 180px;
+  background: linear-gradient(145deg, 
+    rgba(255,255,255,0.1) 0%,
+    rgba(255,255,255,0.05) 50%,
+    rgba(255,255,255,0.08) 100%
+  );
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  box-shadow: 
+    inset 0 0 30px rgba(255,255,255,0.02),
+    0 0 50px rgba(255,255,255,0.03);
+}
+
+/* Hanging cables */
+.quantum-computer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 30px;
+  background: linear-gradient(180deg, 
+    rgba(255,255,255,0.2) 0%,
+    rgba(255,255,255,0.1) 100%
+  );
+  transform: translateX(-50%);
+}
+
+/* Quantum computer internal components */
+.quantum-rings {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+}
+
+.quantum-rings::before,
+.quantum-rings::after {
+  content: '';
+  position: absolute;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 50%;
+  animation: quantum-pulse 4s ease-in-out infinite;
+}
+
+.quantum-rings::before {
+  width: 60px;
+  height: 60px;
+  top: 20px;
+  left: 20px;
+  animation-delay: 0s;
+}
+
+.quantum-rings::after {
+  width: 80px;
+  height: 80px;
+  top: 10px;
+  left: 10px;
+  animation-delay: 2s;
+}
+
+@keyframes quantum-sway {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(2deg); }
+  50% { transform: rotate(-1deg); }
+  75% { transform: rotate(1.5deg); }
+}
+
+@keyframes quantum-pulse {
+  0%, 100% { opacity: 0.1; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(1.05); }
+}
+
 
   
   /* Floating particles */
