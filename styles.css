@@ -43,7 +43,10 @@
   }
 
   /* Testing Out Things To Put In The Background */
-  .spaceship {
+/* DEBUGGED BACKGROUND ELEMENTS */
+
+/* Spaceship - Fixed and Improved */
+.spaceship {
   position: fixed;
   top: 15%;
   right: 5%;
@@ -53,6 +56,7 @@
   z-index: -1;
   transform: rotate(-15deg);
   animation: spaceship-float 20s ease-in-out infinite;
+  pointer-events: none; /* Prevent interaction */
 }
 
 .spaceship::before {
@@ -101,8 +105,8 @@
   0% { opacity: 0.3; transform: scaleX(1); }
   100% { opacity: 0.6; transform: scaleX(1.2); }
 }
-/* Quantum Computer */ 
 
+/* Quantum Computer - Fixed and Improved */
 .quantum-computer {
   position: fixed;
   top: 8%;
@@ -113,6 +117,7 @@
   z-index: -1;
   animation: quantum-sway 15s ease-in-out infinite;
   transform-origin: top center;
+  pointer-events: none; /* Prevent interaction */
 }
 
 /* Quantum computer main body */
@@ -158,6 +163,7 @@
   transform: translateX(-50%);
   width: 100px;
   height: 100px;
+  pointer-events: none;
 }
 
 .quantum-rings::before,
@@ -197,7 +203,129 @@
   50% { opacity: 0.3; transform: scale(1.05); }
 }
 
+/* ADDITIONAL SUBTLE ELEMENTS */
 
+/* Circuit lines in background */
+.circuit-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.02;
+  z-index: -2;
+  pointer-events: none;
+  background-image: 
+    linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 80px 80px;
+  animation: circuit-drift 40s linear infinite;
+}
+
+@keyframes circuit-drift {
+  0% { transform: translateX(0) translateY(0); }
+  100% { transform: translateX(-80px) translateY(-80px); }
+}
+
+/* Floating data particles */
+.data-particle {
+  position: fixed;
+  width: 3px;
+  height: 3px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  z-index: -1;
+  pointer-events: none;
+  animation: data-drift 30s linear infinite;
+}
+
+.data-particle:nth-child(1) { 
+  top: 20%; 
+  right: 12%; 
+  animation-delay: 0s; 
+  animation-duration: 25s;
+}
+
+.data-particle:nth-child(2) { 
+  top: 50%; 
+  right: 18%; 
+  animation-delay: 10s; 
+  animation-duration: 35s;
+}
+
+.data-particle:nth-child(3) { 
+  top: 70%; 
+  right: 8%; 
+  animation-delay: 20s; 
+  animation-duration: 30s;
+}
+
+@keyframes data-drift {
+  0% { 
+    opacity: 0; 
+    transform: translateY(100vh) translateX(0) scale(0.5); 
+  }
+  10%, 90% { 
+    opacity: 0.1; 
+    transform: scale(1); 
+  }
+  100% { 
+    opacity: 0; 
+    transform: translateY(-10vh) translateX(-200px) scale(0.8); 
+  }
+}
+
+/* RESPONSIVE FIXES */
+@media (max-width: 1024px) {
+  .spaceship {
+    width: 150px;
+    height: 90px;
+    top: 10%;
+    right: 3%;
+    opacity: 0.06;
+  }
+  
+  .quantum-computer {
+    width: 140px;
+    height: 200px;
+    top: 5%;
+    right: 2%;
+    opacity: 0.05;
+  }
+}
+
+@media (max-width: 768px) {
+  .spaceship {
+    width: 120px;
+    height: 75px;
+    opacity: 0.04;
+    top: 8%;
+    right: 2%;
+  }
+  
+  .quantum-computer {
+    width: 110px;
+    height: 160px;
+    opacity: 0.04;
+    top: 3%;
+    right: 1%;
+  }
+  
+  .circuit-overlay {
+    opacity: 0.01;
+  }
+  
+  .data-particle {
+    display: none; /* Hide on mobile to reduce visual clutter */
+  }
+}
+
+/* PERFORMANCE OPTIMIZATION */
+.spaceship, .quantum-computer, .circuit-overlay, .data-particle {
+  will-change: transform;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
   
   /* Floating particles */
   .particle{
