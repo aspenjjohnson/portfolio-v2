@@ -3,6 +3,7 @@ h1{
     margin: 0;
     padding: 1.25rem;
 }
+
 h2{
     margin-top: 2rem;
 }
@@ -11,4 +12,20 @@ hr{
     margin: 1.5rem 0;
 }
 
+table, th, td {
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+th, td {
+    padding: 5px;
+}
+.footer{
 
+}
+.links{
+    display:flex;
+    justify-content: center;
+    gap:1.25rem;
+    flex-wrap: wrap;
+    margin: .75rem 0 1.25rem;
+}
