@@ -19,8 +19,9 @@ table, th, td {
     align-items: center;
 }
 th, td {
-    padding: 5px;
+    padding: 20px;
     text-align: center;
+    width: 100rem;
 }
 td {
     width: 15rem;
