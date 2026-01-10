@@ -1,3 +1,12 @@
+body{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;   /* ✅ important */
+  align-items: center;      /* centers items horizontally */
+  justify-content: flex-start; /* start at top instead of vertical centering */
+}
+
 h1{
     text-align: center;
     margin: 0;
@@ -8,7 +17,8 @@ h2{
     margin-top: 2rem;
 }
 h3{
-    text-align: center;
+    text-align: center
+    
 }
 
 hr{
@@ -29,9 +39,28 @@ th, td {
 td {
     width: 15rem;
 }
-.footer{
+img{
+    width: 300px;
+    height: auto;
+    margin: 10px;
+    border: 6px double black;
+    flex-direction: row;
+}
+.image-grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 15px;
+    width:min(400px,100%);
 
 }
+
+.image-grid img{
+    width: 100%;
+    height: auto;
+    margin: 0px;
+    border: 6px double black;
+}
+
 .links{
     display:flex;
     justify-content: center;
