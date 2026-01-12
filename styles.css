@@ -48,9 +48,9 @@ img{
 }
 .image-grid{
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(4,1fr);
     gap: 15px;
-    width:min(400px,100%);
+    width:min(900px,100%);
 
 }
 
