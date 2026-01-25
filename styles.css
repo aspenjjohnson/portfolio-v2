@@ -1,14 +1,32 @@
 body{
-  width: 100%;
+  width: 95%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;   /* ✅ important */
-  align-items: center;      /* centers items horizontally */
   justify-content: flex-start; /* start at top instead of vertical centering */
 }
+.site-header{
+  display: flex;
+  justify-content: space-between; /* pushes left and right sides apart */
+  align-items: center;            /* vertically aligns them on the same line */
+  padding: 16px 24px;
+}
 
+.site-title{
+  margin: 0;                      /* removes default h1 spacing */
+}
+
+.site-nav{
+  display: flex;
+  gap: 16px;                      /* space between links */
+}
+.content {
+    max-width: 850px;   /* adjust: 700–900px is a nice range */
+    margin: 0 auto;     /* centers the content */
+    padding: 0 16px;    /* keeps breathing room on small screens */
+}
 h1{
-    text-align: center;
+    text-align: left;
     margin: 0;
     padding: 1.25rem;
 }
@@ -16,6 +34,7 @@ h1{
 h2{
     margin-top: 2rem;
 }
+
 h3{
     text-align: center
     
@@ -67,4 +86,7 @@ img{
     gap:1.25rem;
     flex-wrap: wrap;
     margin: .75rem 0 1.25rem;
+}
+footer{
+    text-align: center;
 }
