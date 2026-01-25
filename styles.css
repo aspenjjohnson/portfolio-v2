@@ -1,10 +1,15 @@
 body{
-  width: 95%;
+  font-family: "Roboto Mono", serif;
+  font-weight: 400;
   min-height: 100vh;
   display: flex;
   flex-direction: column;   /* ✅ important */
   justify-content: flex-start; /* start at top instead of vertical centering */
 }
+h1, h2, h3 {
+    font-weight: 600;
+}
+
 .site-header{
   display: flex;
   justify-content: space-between; /* pushes left and right sides apart */
@@ -18,13 +23,33 @@ body{
 
 .site-nav{
   display: flex;
-  gap: 16px;                      /* space between links */
+  gap: 16px;                  /* space between links */
+}
+.site-nav a:not(:last-child)::after{
+  content: "|";
+  margin-left: 12px; /* space after the link before the pipe */
+}
+
+
+.site-nav a:link,
+.site-nav a:visited{
+  color: black;           /* pick your color */
+  text-decoration: none;
+}
+
+.site-nav a:hover span,
+.site-nav a:focus span {
+    text-decoration: underline;  /* Hover effect --> Underline */
+}
+.site-nav a:active{
+    color: black;
 }
 .content {
     max-width: 850px;   /* adjust: 700–900px is a nice range */
     margin: 0 auto;     /* centers the content */
     padding: 0 16px;    /* keeps breathing room on small screens */
 }
+
 h1{
     text-align: left;
     margin: 0;
