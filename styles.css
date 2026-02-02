@@ -1,3 +1,4 @@
+
 body{
   font-family: "Roboto Mono", serif;
   font-weight: 400;
@@ -5,6 +6,10 @@ body{
   display: flex;
   flex-direction: column;   /* ✅ important */
   justify-content: flex-start; /* start at top instead of vertical centering */
+  cursor: url("images/targetBlack.png")16 16, auto;
+}
+a, a:visited, a:hover, a:active{
+  cursor: url("/assets/cursor/targetRed.png") 16 16, auto;
 }
 
 h1, h2, h3 {
