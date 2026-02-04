@@ -45,10 +45,25 @@
         <ul>
             <li> Coauthored a <a target="_blank" href="https://www.tandfonline.com/doi/full/10.1080/13504851.2025.2606928?utm_source=researchgate.net&utm_medium=article">paper</a> under <a target="_blank" href="https://business.mercer.edu/faculty-and-insights/faculty-directory/dr-szabolcs-blazsek/"> Prof. Szabolcs Blazsek</a> in correspondance with Mercer's Economics department.</li>
         </ul>
-        <p>
-            My goal for 2026 is to have completed 1,000 problems between Physics I and II .
-        </p>
+        <section class="card">
+            <h2 class="heatmaptitle"> Road To 1K Physics Problems Solved  (2026 Annual Goal) </h2>
+            <p class="problems_solved_tracker"><strong id="totalSolved">0</strong> / 1000 problems solved </p> <!-- Strong is a command that says this content holds high PRECEDEDNCE-->
+        
+            <div id="heatmap" class="heatmap" aria-label="Daily Problem-Solving Heatmap"></div>
+            <div class="legend" aria-hidden="true">
+                <span>Less</span>
+                <span class="box lvl0"></span>
+                <span class="box lvl1"></span>
+                <span class="box lvl2"></span>
+                <span class="box lvl3"></span>
+                <span class="box lvl4"></span>
+                <span>More</span>
+            </div>
+
+            <small class="muted"> Hover over a square to see the date and # of problems completed.</small>
+        </section>
         </main>
+        <script defer src="heatmap.js"></script>
         <footer>
             <hr />
             <p>&copy; 2026 Aspen Johnson</p>
