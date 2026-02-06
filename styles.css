@@ -32,8 +32,11 @@ h1, h2, h3 {
 /* Navigation Bar CSS Styling */
 .site-nav{
   display: flex;
-  gap: 16px;                  /* space between links */
+  gap: 16px;
+  flex-wrap: wrap;       /* allow links to wrap */
+  row-gap: 8px;          /* nicer display on iphones, etc., when wrapped */
 }
+
 .site-nav a:not(:last-child)::after{
   content: "|";
   margin-left: 12px; /* space after the link before the pipe */
@@ -207,6 +210,20 @@ img{
     display: inline-block;
     border: 1px solid rgba(0,0,0,0.04);
 }
+/* Resizing for different displays (Phone, etc.) */
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 16px;  /* slightly smaller padding */
+  }
+  .site-nav a:not(:last-child)::after{
+    content: "";         /*  remove pipes on mobile , there is now a natural seperation to them */
+    margin-left: 0;
+  }
+}
+
 /* Footer CSS Styling */
 footer{
     text-align: center;
