@@ -26,7 +26,9 @@ h1, h2, h3 {
 }
 
 .site-title{
-  margin: 0;                      /* removes default h1 spacing */
+  margin: 0;  
+  text-decoration: none;  /* removes default h1 spacing */
+  color: black;
 }
 
 /* Navigation Bar CSS Styling */
@@ -43,7 +45,7 @@ h1, h2, h3 {
 }
 
 
-.site-nav a:link,
+.site-nav a:link, .site-title-link,
 .site-nav a:visited{
   color: black;           /* pick your color */
   text-decoration: none;
