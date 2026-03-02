@@ -1,5 +1,5 @@
 const YEAR = 2026;
-const DATA_URL = "physics-heatmap-2026";
+const DATA_URL = "js/physics-heatmap-2026";
 
 const pad = (n) => String(n).padStart(2, "0");
 const toISODate = (d) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
