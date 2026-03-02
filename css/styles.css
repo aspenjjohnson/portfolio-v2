@@ -8,9 +8,15 @@ body{
   justify-content: flex-start; /* start at top instead of vertical centering */
   cursor: url("images/targetBlack.png")16 16, auto;
 }
+
+main{
+   
+}
 a, a:visited, a:hover, a:active{
   cursor: url("images/targetRed.png") 16 16, auto;
 }
+
+
 /* Large Headings Font Weight CSS Styling */
 h1, h2, h3 {
     font-family: "Inter", system-ui, -apple-system, Arial, sans-serif;
@@ -62,9 +68,13 @@ h1, h2, h3 {
     max-width: 850px;   /* adjust: 700–900px is a nice range */
     margin: 0 auto;     /* centers the content */
     padding: 0 16px;    /* keeps breathing room on small screens */
+    text-decoration: none;
 }
 /* General Headings CSS Styling */
 
+#lang-lib {
+    font-size: small;
+}
 h1{
     text-align: left;
     margin: 0;
@@ -229,4 +239,9 @@ img{
 /* Footer CSS Styling */
 footer{
     text-align: center;
+    
+}
+
+.hr{
+
 }
