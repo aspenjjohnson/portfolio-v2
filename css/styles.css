@@ -10,7 +10,7 @@ body{
 }
 
 main{
-   
+   flex: 1;
 }
 a, a:visited, a:hover, a:active{
   cursor: url("images/targetRed.png") 16 16, auto;
